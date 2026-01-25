@@ -35,7 +35,7 @@ SOFTWARE.
 
 ## Blog Content
 
-All blog posts, articles, and original content under the `\source` path are licensed under:
+All blog posts, articles, and original content under the path `\source` are licensed under:
 
 **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
 
@@ -51,7 +51,7 @@ For the full license text, see: https://creativecommons.org/licenses/by-nc/4.0/
 
 ## Images and Media
 
-All images and media files are also licensed under CC BY-NC 4.0 unless otherwise noted.
+All images and media files under the path `\source` are also licensed under CC BY-NC 4.0 unless otherwise noted.
 
 ## Third-Party Components
 
