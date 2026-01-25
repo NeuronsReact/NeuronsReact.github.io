@@ -1,3 +1,15 @@
+# Dual License
+
+This repository contains both software and blog content, each under different licenses.
+
+## Software Components
+
+The following software components are licensed under the MIT License:
+
+- Hexo framework and configuration files
+- Custom scripts and build tools
+- Theme modifications and code
+
 MIT License
 
 Copyright (c) 2026 NeuronsReact
@@ -19,3 +31,33 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+## Blog Content
+
+All blog posts, articles, and original content are licensed under:
+
+**Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **NonCommercial** — You may not use the material for commercial purposes.
+
+For the full license text, see: https://creativecommons.org/licenses/by-nc/4.0/
+
+## Images and Media
+
+All images and media files are also licensed under CC BY-NC 4.0 unless otherwise noted.
+
+## Third-Party Components
+
+This repository may include third-party components (themes, plugins, libraries) under their respective licenses. Please check the license files in each component's directory.
+
+## Summary
+
+- **Code/Software**: MIT License (permissive, allows commercial use)
+- **Blog Content**: CC BY-NC 4.0 (requires attribution, no commercial use)
