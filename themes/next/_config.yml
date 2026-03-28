@@ -39,8 +39,8 @@ custom_file_path:
 # Schemes
 #scheme: Muse
 #scheme: Mist
-#scheme: Pisces
-scheme: Gemini
+scheme: Pisces
+#scheme: Gemini
 
 # Dark Mode
 darkmode: true
@@ -572,7 +572,7 @@ math:
   every_page: false
 
   mathjax:
-    enable: false
+    enable: ams
     # Available values: none | ams | all
     tags: none
 
@@ -593,12 +593,12 @@ pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox/
-fancybox: false
+fancybox: true
 
 # Medium Zoom is a JavaScript library for zooming images like Medium.
 # Warning: Do not enable both `fancybox` and `mediumzoom`.
 # For more information: https://medium-zoom.francoischalifour.com
-mediumzoom: false
+mediumzoom: true
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://apoorv.pro/lozad.js/demo/
@@ -607,7 +607,7 @@ lazyload: false
 # Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
-pangu: false
+pangu: true
 
 # Prefetch links based on what is in the user's viewport.
 # For more information: https://getquick.link
@@ -636,22 +636,22 @@ quicklink:
 # For more information: https://animate.style
 motion:
   enable: true
-  async: false
-  duration: 200
+  async: true
+  duration: 50
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
     menu_item: fadeIn
     post_block: fadeInDown
     post_header: fadeInDown
     post_body: fadeInDown
-    coll_header: fadeInLeft
+    coll_header: fadeIn #fadeInLeft
     # Only for Pisces | Gemini.
     sidebar: fadeIn
 
 # Progress bar in the top during page loading.
 # For more information: https://github.com/CodeByZach/pace
 pace:
-  enable: false
+  enable: true
   # All available colors:
   # black | blue | green | orange | pink | purple | red | silver | white | yellow
   color: blue
