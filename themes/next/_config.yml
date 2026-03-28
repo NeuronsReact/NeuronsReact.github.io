@@ -350,8 +350,8 @@ preconnect: false
 # Set the text alignment in posts / pages.
 text_align:
   # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
+  desktop: match-parent
+  mobile: match-parent
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
@@ -435,7 +435,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
@@ -448,7 +448,7 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
+    family: Ginto,Arial,'PingFang SC','Noto Sans SC',sans-serif #Lato
     size:
 
   # Font settings for site title (.site-title).
@@ -651,7 +651,7 @@ motion:
 # Progress bar in the top during page loading.
 # For more information: https://github.com/CodeByZach/pace
 pace:
-  enable: true
+  enable: false
   # All available colors:
   # black | blue | green | orange | pink | purple | red | silver | white | yellow
   color: blue
