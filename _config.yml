@@ -116,3 +116,8 @@ search:
   content: true
   format: html
 
+# config of hexo-renderer-pandoc
+pandoc:
+  args:
+    - --mathjax
+
