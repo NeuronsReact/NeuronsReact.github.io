@@ -1,7 +1,8 @@
 ---
-title: Reading journal of *Hell yeah or No* (keep updating)
+title: Reading journal of “Hell yeah or No” (keep updating)
 date: 2026/3/7
 tags: [读书笔记]
+categories: [读书笔记]
 updated: 2026/3/7
 ---
 偶然在知乎评论区发现了这本书。通过这本书，作者分享了关于“什么事值得做”的观点，以及选择、实现真正值得做的事的行动方法。
