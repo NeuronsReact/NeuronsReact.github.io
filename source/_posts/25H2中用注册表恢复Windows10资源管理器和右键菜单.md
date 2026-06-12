@@ -1,5 +1,5 @@
 ---
-title: Windows11 25H2中用注册表恢复Windows10资源管理器和右键菜单
+title: Windows11 25H2注册表恢复Windows10资源管理器和右键菜单
 tags:
   - Software
 categories:
