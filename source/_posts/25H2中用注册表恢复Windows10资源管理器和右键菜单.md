@@ -6,15 +6,17 @@ categories:
   - IT
   - Software
 date: 2026-05-24 00:09:00
-updated: 2026-05-24 00:09:00
+updated: 2026-06-20 14:03:00
 ---
 
-如题。
+Windows 11 的资源管理器从 22H2 开始就响应迟缓，到 25H2 都没修好。偶然发现一些只用注册表就能实现的恢复方法，遂记录。
 <!-- more -->
 
 ## 效果图
 ![Fig1. 在Windows11 25H2中用注册表恢复Windows10资源管理器和右键菜单](在Windows11 25H2中用注册表恢复Windows10资源管理器和右键菜单_Fig1.png)
 
+## 原理
+在 dll 路径中添加一些字符，使其加载失败，fallback 到 classical ribbon 样式。
 
 ## 实现
 保存以下内容为 *.reg 文件。双击 - 导入。
@@ -96,6 +98,25 @@ Windows Registry Editor Version 5.00
   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
   00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
 ```
+
+## 延申
+以上的 *.reg 仅对当前 user 生效，要使其对其他 user 生效，可能需要改成如下内容，并且需要临时修改键的权限才能应用：
+```reg
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}]
+@="CLSID_ItemsViewAdapter"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{2aa9162e-c906-4dd9-ad0b-3d24a8eef5a0}\InProcServer32]
+"ThreadingModel"="Apartment"
+@="C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}]
+@="File Explorer Xaml Island View Adapter"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{6480100b-5a83-4d1e-9f69-8ae5a88e9a33}\InProcServer32]
+@="C:\\Windows\\System32\\Windows.UI.FileExplorer.dll_"
+"ThreadingModel"="Apartment"
+```
+
 
 ## 参考
 - [Navigation buttons in File Explorer doesn't work for some users in Windows 11 | Azure Virtual Desktop](https://learn.microsoft.com/en-us/answers/questions/1614023/navigation-buttons-in-file-explorer-doesnt-work-fo)

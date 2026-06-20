@@ -10,6 +10,8 @@
 
 .posts-expand .post-meta {
   justify-content: flex-start;
+  margin-top: 12px;
+  margin-bottom: 0px;
 }
 
 // Left-align "Read more" button and post tags
@@ -17,7 +19,7 @@
   margin-top: 0px;
   margin-bottom: 42px; // 105px; // restore the original margin after removing the post divider line
   text-align: left;
-
+  display: none;
   .btn {
     background: transparent;
     border: 0;
@@ -34,7 +36,7 @@
 }
 
 .posts-expand.index .post-body > :has(+ .post-button) {
-  margin-bottom: 12px; // 真正撑开 Read more 上方距离的是摘要最后一个段落的默认下边距。现在只把首页/列表页里紧挨 Read more 前面的那个元素下边距压到 6px，不会影响文章正文页段落排版。
+  margin-bottom: 60px; // 真正撑开 Read more 上方距离的是摘要最后一个段落的默认下边距。现在只把首页/列表页里紧挨 Read more 前面的那个元素下边距压到 6px，不会影响文章正文页段落排版。
 }
 
 .posts-expand.index .post-block {
