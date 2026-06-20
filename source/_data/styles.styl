@@ -32,33 +32,35 @@
 // Left-align "Read more" button and post tags
 .post-button {
   margin-top: 0px;
-  margin-bottom: 42px; // 105px; // restore the original margin after removing the post divider line
+  margin-bottom: 66px; // 105px; // restore the original margin after removing the post divider line
   text-align: left;
-  display: none;
+  //display: none;
   .btn {
     background: transparent;
     border: 0;
+    border-bottom: 1px solid var(--content-bg-color);
     color: var(--link-color);
     padding: 0;
-    transition-property: color;
+    transition-property: border-color, color;
 
     &:hover {
       background: transparent;
       border: 0;
+      border-bottom: 1px solid var(--text-color);
       color: var(--link-hover-color);
     }
   }
 }
 
 .posts-expand.index .post-body > :has(+ .post-button) {
-  margin-bottom: 60px; // 真正撑开 Read more 上方距离的是摘要最后一个段落的默认下边距。现在只把首页/列表页里紧挨 Read more 前面的那个元素下边距压到 6px，不会影响文章正文页段落排版。
+  margin-bottom: 6px ; // 无 read more：60px //真正撑开 Read more 上方距离的是摘要最后一个段落的默认下边距。现在只把首页/列表页里紧挨 Read more 前面的那个元素下边距压到 6px，不会影响文章正文页段落排版。
 }
 
-.posts-expand.index .post-title,
-.posts-expand.index .post-body,
-.posts-expand.index .post-meta-container a {
-  cursor: pointer;
-}
+//.posts-expand.index .post-title,
+//.posts-expand.index .post-body,
+//.posts-expand.index .post-meta-container a {
+//  cursor: pointer;
+//}
 
 .post-tags {
   text-align: left;
