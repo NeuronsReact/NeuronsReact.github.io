@@ -15,7 +15,10 @@ document.addEventListener('click', event => {
 
   if (event.defaultPrevented || event.button !== 0 || event.target.closest(interactiveSelector)) return;
 
-  const postBlock = event.target.closest('.posts-expand.index .post-block');
+  const clickableArea = event.target.closest('.posts-expand.index .post-title, .posts-expand.index .post-body');
+  if (!clickableArea) return;
+
+  const postBlock = clickableArea.closest('.post-block');
   if (!postBlock) return;
 
   const selection = window.getSelection();
