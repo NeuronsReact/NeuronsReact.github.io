@@ -447,8 +447,8 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: true
-    family: Ginto,Arial,'PingFang SC','Noto Sans SC',sans-serif #Lato
+    external: false
+    family: PingFang SC, Ginto, Noto Sans SC, Arial, sans-serif #Lato # Ginto is good
     size:
 
   # Font settings for site title (.site-title).
