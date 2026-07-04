@@ -756,7 +756,7 @@ giscus:
   repo: "NeuronsReact/NeuronsReact.github.io" # Github repository name
   repo_id: "R_kgDOQ7LUMQ" # Github repository id
   category: "Announcements" # Github discussion category
-  category_id: # Github discussion category id
+  category_id: "DIC_kwDOQ7LUMc4DAfNw" # Github discussion category id
   # Available values: pathname | url | title | og:title
   mapping: title
   # Available values: 0 | 1
