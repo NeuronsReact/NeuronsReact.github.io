@@ -23,7 +23,7 @@ updated: 2026-09-28 23:30:00
 
 ![Fig1. 导入数据后的 Navigator Workbook 界面](Blog-AircraftDesign-a1-ModalTest-Figure1.png){width=1200px}
 
-这里我们“Create Picture”，至少选 1x2，并选择一个 Node 的 FRF 和 Coherence 曲线查看。选择 4x2 可以一次对比 4 个 node 的数据。可以看到这次数据质量不太理想，Node 1~4 在高于 75Hz 的频段全军覆没。Node 2,3 在 46.1Hz~46.5Hz 的峰处表现还不错。44Hz 以下 Node2,4 在共振峰表现比较好。Node 5~8 在整个频域都很难看。（这里双击x坐标下面的区域，可以唤出频带宽度修改界面。）
+这里我们“Create Picture”，至少选 1x2，并选择一个 Node 的 FRF 和 Coherence 曲线查看。选择 4x2 可以一次对比 4 个 node 的数据。可以看到这次数据质量不太理想，Node 1~4 在高于 75Hz 的频段全军覆没。Node 2,3 在 46.1Hz~46.5Hz 的峰处表现还不错。44Hz 以下 Node2,4 在共振峰表现比较好。Node 5~8 在整个频域都很难看。（这里双击x坐标下面的区域，可以唤出频带宽度修改界面。）这说明 Node 1, 5~8 都没有很好地激振起来。
 
 ![Fig2. Picture 界面](Blog-AircraftDesign-a1-ModalTest-Figure2.png.png){width=1200px}
 
@@ -42,8 +42,16 @@ updated: 2026-09-28 23:30:00
 
 全部数据项都 map 之后，再来到 Modal Data Selection Workbook 中，Refresh function table，就可以在 3D 视图中看到 FRF 对应的几何 Node 了，mapping 成功应用。
 
+Tips：“数据检查”阶段发现的数据质量较好的点，可选中并在 FRF set 功能中 Create New Set。在下一步 Time MDOF 方法模态识别时可以“Change Modal Data Selection”并选择此 Set.
+
 # Time MDOF 方法模态识别
-（劣势1，如果人不在店里就识别不了）
+首先显示的是自由度列表和各自由度的 FRF。列表可以多选。我们选择 Node 2,3,4 （或者用上一个 tips 建立的 Set）。这里选择的 FRF 会成为下一步 Stabilization 的对象。之后在底部设置 Stablization 的频段。
+
+Stabilization 图，笔者个人的选择依据有2点：一是随着拟合阶数增加但频率几乎不改变的 Stable 点；二是 FRF 有峰的位置。前者容易理解，后者主要在有 FRF 峰但是频率不够稳定的情况下防止漏掉某个 FRF 峰对应的模态。
+
+![Stabilization diagram](Blog-AircraftDesign-a1-ModalTest-Figure5.png)
+
+（劣势1，input busket只能作为一个数据进行识别，不能用于计算MAC）
 
 # 保存
-（session是不保存project文件的。
+（session是不保存input busket文件的。
