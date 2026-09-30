@@ -34,11 +34,11 @@ updated: 2026-09-28 23:30:00
 
 两边的 list 支持 Ctrl 和 Shift 多选和连选。可以用“Quick Find”来筛选两边的自由度，就可以方便地连选了。
 
-![Fig3. Alias Mapping 界面](Blog-AircraftDesign-a1-ModalTest-Figure2.png)
+![Fig3. Alias Mapping 界面](Blog-AircraftDesign-a1-ModalTest-Figure3.png){width=1200px}
 
 注意右侧会出现激励的数据，比如 1:2+Z 只有 AutoPower，并且在 FRF、Coherence 中充当除数。这里我们就先只 map 响应的数据。
 
-![Fig4. Alias Mapping 界面](Blog-AircraftDesign-a1-ModalTest-Figure2.png)
+![Fig4. Alias Mapping 界面](Blog-AircraftDesign-a1-ModalTest-Figure4.png){width=1200px}
 
 全部数据项都 map 之后，再来到 Modal Data Selection Workbook 中，Refresh function table，就可以在 3D 视图中看到 FRF 对应的几何 Node 了，mapping 成功应用。
 
@@ -49,9 +49,24 @@ Tips：“数据检查”阶段发现的数据质量较好的点，可选中并�
 
 Stabilization 图，笔者个人的选择依据有2点：一是随着拟合阶数增加但频率几乎不改变的 Stable 点；二是 FRF 有峰的位置。前者容易理解，后者主要在有 FRF 峰但是频率不够稳定的情况下防止漏掉某个 FRF 峰对应的模态。
 
-![Stabilization diagram](Blog-AircraftDesign-a1-ModalTest-Figure5.png)
+![Fig5. Stabilization diagram](Blog-AircraftDesign-a1-ModalTest-Figure5.png){width=1200px}
 
-（劣势1，input busket只能作为一个数据进行识别，不能用于计算MAC）
+觉得选择了足够的频点之后，可以在 Shapes 中查看对应的振型。
+
+![Fig6. Modal shapes display](Blog-AircraftDesign-a1-ModalTest-Figure6.png){width=1200px}
+
+# FRF 拟合效果和重复性验证
+在 Modal Synthesis 中，我们可以检查模态识别的 FRF 与原始 FRF 的拟合情况。从图里可以看出，拟合效果一般，但关键的峰是对应的。
+
+![Fig7. Modal Synthesis](Blog-AircraftDesign-a1-ModalTest-Figure7.png){width=1200px}
+
+如有另一次的测量数据，我们也可以比较两批数据中相似模态的相关性。（图中选择了同一组数据，仅供示范）
+
+![Fig8. MAC calculation](Blog-AircraftDesign-a1-ModalTest-Figure8.png){width=1200px}
+
+右上角开启“Matrix”视图，就能看到熟悉的 MAC 立方图了。（图中选择了同一组数据，仅供示范）
+
+![Fig9. MAC Matrix diagram](Blog-AircraftDesign-a1-ModalTest-Figure9.png){width=1200px}
 
 # 保存
-（session是不保存input busket文件的。
+保存为 Testlab Project 时，session 内的数据、几何 mapping、已经 calculate 的 processing 会保存到 Project 中，但不保存稳定图及标记的 cursor、input busket 文件。下一次打开时需要手动再导入 input busket。
