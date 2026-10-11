@@ -310,15 +310,71 @@ TS=(
                      COGNITIVE AUGMENTATION
                     (the ultimate goal of BCI)
 ```
+以及对应的 summary。
+<details>
+<summary>Stage-by-Stage Summary</summary>
+
+### Stage-by-Stage Summary
+
+##### 1. Signal Acquisition (READ)
+The majority of the BCI literature (230/460, 50%) uses **EEG** as the recording modality — by far the most common due to non-invasiveness and affordability. **Intracortical** (31) and **endovascular** (49) represent the invasive frontier, while **fNIRS** (20) and **ECoG** (18) serve as middle-ground semi-invasive options. **MEG** (7), **fMRI** (4), and **functional ultrasound** (2) are niche modalities. **Hybrid BCI** (44) fuses multiple signal sources, and **hardware-system** (55) addresses wearable, wireless, and implantable system design.
+
+### 2. BCI Paradigm / Stimulus
+**Motor imagery** (114) dominates as the most-studied paradigm — imagining movement without executing it. **SSVEP** (57) and **P300** (41) are the two dominant evoked-potential paradigms for spelling and communication. **Cognitive monitoring** (80) covers attention, mental workload, and fatigue detection. **Emotion recognition** (31) is a growing affective-BCI subfield. **Visual paradigms** (54) and **auditory paradigms** (4) define the sensory channel.
+
+### 3. Signal Processing
+**Feature extraction** (109) and **artifact removal** (25) form the front-end processing layer — extracting discriminative features from raw neural signals and rejecting eye/muscle artifacts. **Common spatial patterns**, **filter banks**, **wavelet decomposition**, and **independent component analysis** are the dominant techniques.
+
+### 4. Decoding & Classification
+The algorithmic core: **Traditional ML** (137, including SVM, LDA, Bayesian classifiers) remains the most common approach, but **deep learning** (96 — CNNs, transformers, spiking neural networks) is growing rapidly. **Transfer learning** (60 — domain adaptation, cross-subject generalization, zero-calibration) addresses the critical "BCI illiteracy" and cross-session variability problem.
+
+### 5. Decoding Targets
+What is being decoded: **Speech** (31 — synthesizing naturalistic speech from cortical signals), **speller communication** (36 — P300/SSVEP spellers for text), **motor learning** (32 — adapting BCI control with practice), **neurofeedback** (21 — self-regulation of brain states), **disorder diagnosis** (22 — using BCI as a diagnostic tool for depression, autism, Alzheimer's), and **consciousness assessment** (4 — detecting awareness in disorders of consciousness).
+
+### 6. Output / Control
+The decoded intent drives external devices: **robot control** (49 — prosthetics, exoskeletons, wheelchairs, assistive robots, shared autonomy) and **vehicle/drone control** (46 — UAVs, VR/AR environments, gaming, autonomous vehicles).
+
+### 7. Stimulation (WRITE — the "other side" of BCI)
+**Functional stimulation** (36) covers FES, tDCS, TMS, and neurostimulation — delivering current to the brain or muscles. This is substantially smaller than the decoding literature (36 vs. 460), reflecting that the "write" side of BCI is less mature than the "read" side.
+
+### 8. Clinical Translation (CLOSED-LOOP)
+**Clinical trials** (104) and **motor rehabilitation** (102) are the dominant application context — BCI as a therapy for stroke recovery. **ALS** (93) is the other major patient population — restoring communication for locked-in patients. **Stroke** (71) and **SCI** (25) applications target motor restoration. **Animal models** (8) support preclinical testing.
+
+### 9. Ethics, Security & Society
+**Ethics & privacy** (29 — mental privacy, autonomy, stigma, legal frameworks), **security** (22 — cyberattacks, adversarial perturbations, biometric authentication), and **commercial/industry** (8 — start-ups, market translation, business models) form the socio-technical perimeter.
+
+### 10. Meta / Review
+**Review articles** (95 — systematic reviews, surveys, tutorials, perspectives) constitute a substantial fifth of the literature — reflecting that this is a maturing field consolidating its knowledge.
+</details>
+
+至此，素材库基本建立完成。不过 tag 如此多的素材库，使用起来也需要相当的技巧。
 
 
-## 
+## 尝试使用素材库
 
-素材库建立好了，
+挑几个 tag 稍作深入。此时还没有到精读文章内容的阶段，仍然通过阅读 abstract 涉猎。有时也借助 AI 阅读 abstract 来涉猎。Prompt 大致如下：
 
-tag 整理好了。这个“hybrid-bci”看起来非常 juicy，我倒要看看有多 hybrid、怎么 hybrid。其中一篇文章的 Abstract 写得很清楚：hBCI, is a device formed by the amalgamation of control signal and bio-signal combination of control signal with one or more bio-signals that enhances system performance and usability. (Amalgamation / Combination：结合 / 融合; Usability：易用性 / 可用性)
+<details>
+<summary> Prompt </summary>
+`Quiz4/zotero_skill/zotero.prompt.md` is the prompt about reading, writing zotero database.
+Under the subcollection `TestSorting260823\2022-260823\1.Brain-computer interface`, there are items with tags. I only care about Q1 journals. `Quiz4/ZoteroRound0/BCI_System_Diagram.md` shows the locations of tags in the whole BCI system. You will find a tag "hybrid-bci". 
 
+You read all items with the tag "hybrid-bci", verify if this tag is reasonable. If true, tell me what is "hybrid-bci".
 
+---
 
-接着，先浅读了 feature extraction 的文章，似乎主要讲的是……。似乎不是那么 interesting
+> 除了给出总结，AI 还会顺带找出一些 tag 不合适的文章，持续更新 tag 表
+
+---
+
+Keep the tag `hybrid-bci` only for 30 currently solid `hybrid-bci` items. Remove the `hybrid-bci` for the weak ones and wrong ones. For the weak and wrong ones, tag them with suitable tag(s) in `Quiz4/ZoteroRound0/BCI_Classification_Table.md`. If the main topic of an item does not fit any tag in that table, you consider to add one, and update `Quiz4/ZoteroRound0/BCI_Classification_Table.md` and `Quiz4/ZoteroRound0/BCI_System_Diagram.md`.
+
+If you have any question, ask first.
+</details>
+
+试一下“hybrid-bci”。一篇文章的 Abstract 这样解释：hBCI, is a device formed by the combination of control signal with one or more bio-signals that enhances system performance and usability. (Amalgamation / Combination：结合 / 融合; Usability：易用性 / 可用性) 。这可能会在
+
+接着再试一下 feature extraction，即”模式识别“：这是 BCI 结构中处于原始信号采集（raw brain signals）和分类器（classifier）中间的阶段。该阶段将复杂、高维且低信噪比的信号转换为低阶、高区分度的向量，再输入分类器。
+
 之后看到 speech-decoding，有意思。看过摘要后，选出 6 篇文章全文下载。其中 …… 的演示视频非常精彩。这些文章讨论如何通过电信号识别语言，同时还要分辨被测对象是打算发言还是自言自语。
+
