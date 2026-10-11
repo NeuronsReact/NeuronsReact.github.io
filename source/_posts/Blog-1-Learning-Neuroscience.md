@@ -1,13 +1,22 @@
 ---
-title: 
+title: 神经科学学习 —— Step 1：建立基础素材库
 tags:
+  - 创作
+categories:
+  - 创作
+date: 2026-10-12 02:46:36
+updated: 2026-10-12 02:46:36
+mathjax: true
 ---
 
-回想23年写的回答，刷着AI“驱逐”人类的新闻，笔者感觉AI与人类的冲突发展有些超越预期，似乎不远的未来，人类就要选择是被击败还是加入了。笔者一直认为，人类和AI应当结合，才能避免零和博弈。为了实现这点，应当渐进地实现人和AI在认知层面的耦合，比如通过一些基于LLM的认知增强产品，还能并行解决人和人之间沟通低效的问题。针对实现认知增幅的目标，笔者开展了学习和研究。
+
+回想着 23 年写的回答，刷着 AI “驱逐”人类的新闻，AI 与人类的冲突好像愈演愈烈。似乎不远的未来，人类就要选择是被击败还是加入了。笔者始终认为，人类和 AI 应当结合，也必然结合、同化。只有这样才能避免零和博弈。为了实现这点，应当渐进地实现人和 AI 在认知层面的耦合，比如通过一些基于 LLM 的认知增强产品，还能同时解决人和人之间沟通低效的问题。针对实现认知增强这个目标，笔者开展了学习和研究。
+
+<!-- more -->
 
 ## 找到切入点
 
-之前几乎没接触过神经科学，先跟GPT讨论一轮。
+之前几乎没接触过神经科学，先跟 GPT 讨论一轮。
 
 <details>
 <summary>提示词</summary>
@@ -20,10 +29,11 @@ Problems:
 
 </details>
 
-GPT把这个topic转化成了3个主要的Problem：
+GPT 把这个 topic 转化成了 3 个主要的 Problem：
 
 ### Problem A — Cognitive offloading
 人类借助外部认知资源完成任务，比如笔记、计算器、地图、计算机软件。这在认知神经学中叫作“认知卸载”。实验研究表明，认知卸载可以显著提升任务表现，但也会建立对外部认知资源的依赖。人利用LLM进行认知卸载的关系式：
+
 $$
 \text{Human}
 \rightleftharpoons
@@ -314,36 +324,44 @@ TS=(
 <details>
 <summary>Stage-by-Stage Summary</summary>
 
-### Stage-by-Stage Summary
+**1. Signal Acquisition (READ)**
 
-##### 1. Signal Acquisition (READ)
 The majority of the BCI literature (230/460, 50%) uses **EEG** as the recording modality — by far the most common due to non-invasiveness and affordability. **Intracortical** (31) and **endovascular** (49) represent the invasive frontier, while **fNIRS** (20) and **ECoG** (18) serve as middle-ground semi-invasive options. **MEG** (7), **fMRI** (4), and **functional ultrasound** (2) are niche modalities. **Hybrid BCI** (44) fuses multiple signal sources, and **hardware-system** (55) addresses wearable, wireless, and implantable system design.
 
-### 2. BCI Paradigm / Stimulus
+**2. BCI Paradigm / Stimulus**
+
 **Motor imagery** (114) dominates as the most-studied paradigm — imagining movement without executing it. **SSVEP** (57) and **P300** (41) are the two dominant evoked-potential paradigms for spelling and communication. **Cognitive monitoring** (80) covers attention, mental workload, and fatigue detection. **Emotion recognition** (31) is a growing affective-BCI subfield. **Visual paradigms** (54) and **auditory paradigms** (4) define the sensory channel.
 
-### 3. Signal Processing
+**3. Signal Processing**
+
 **Feature extraction** (109) and **artifact removal** (25) form the front-end processing layer — extracting discriminative features from raw neural signals and rejecting eye/muscle artifacts. **Common spatial patterns**, **filter banks**, **wavelet decomposition**, and **independent component analysis** are the dominant techniques.
 
-### 4. Decoding & Classification
+**4. Decoding & Classification**
+
 The algorithmic core: **Traditional ML** (137, including SVM, LDA, Bayesian classifiers) remains the most common approach, but **deep learning** (96 — CNNs, transformers, spiking neural networks) is growing rapidly. **Transfer learning** (60 — domain adaptation, cross-subject generalization, zero-calibration) addresses the critical "BCI illiteracy" and cross-session variability problem.
 
-### 5. Decoding Targets
+**5. Decoding Targets**
+
 What is being decoded: **Speech** (31 — synthesizing naturalistic speech from cortical signals), **speller communication** (36 — P300/SSVEP spellers for text), **motor learning** (32 — adapting BCI control with practice), **neurofeedback** (21 — self-regulation of brain states), **disorder diagnosis** (22 — using BCI as a diagnostic tool for depression, autism, Alzheimer's), and **consciousness assessment** (4 — detecting awareness in disorders of consciousness).
 
-### 6. Output / Control
+**6. Output / Control**
+
 The decoded intent drives external devices: **robot control** (49 — prosthetics, exoskeletons, wheelchairs, assistive robots, shared autonomy) and **vehicle/drone control** (46 — UAVs, VR/AR environments, gaming, autonomous vehicles).
 
-### 7. Stimulation (WRITE — the "other side" of BCI)
+**7. Stimulation (WRITE — the "other side" of BCI)**
+
 **Functional stimulation** (36) covers FES, tDCS, TMS, and neurostimulation — delivering current to the brain or muscles. This is substantially smaller than the decoding literature (36 vs. 460), reflecting that the "write" side of BCI is less mature than the "read" side.
 
-### 8. Clinical Translation (CLOSED-LOOP)
+**8. Clinical Translation (CLOSED-LOOP)**
+
 **Clinical trials** (104) and **motor rehabilitation** (102) are the dominant application context — BCI as a therapy for stroke recovery. **ALS** (93) is the other major patient population — restoring communication for locked-in patients. **Stroke** (71) and **SCI** (25) applications target motor restoration. **Animal models** (8) support preclinical testing.
 
-### 9. Ethics, Security & Society
+**9. Ethics, Security & Society**
+
 **Ethics & privacy** (29 — mental privacy, autonomy, stigma, legal frameworks), **security** (22 — cyberattacks, adversarial perturbations, biometric authentication), and **commercial/industry** (8 — start-ups, market translation, business models) form the socio-technical perimeter.
 
-### 10. Meta / Review
+**10. Meta / Review**
+
 **Review articles** (95 — systematic reviews, surveys, tutorials, perspectives) constitute a substantial fifth of the literature — reflecting that this is a maturing field consolidating its knowledge.
 </details>
 
@@ -352,7 +370,7 @@ The decoded intent drives external devices: **robot control** (49 — prosthetic
 
 ## 尝试使用素材库
 
-挑几个 tag 稍作深入。此时还没有到精读文章内容的阶段，仍然通过阅读 abstract 涉猎。有时也借助 AI 阅读 abstract 来涉猎。Prompt 大致如下：
+挑几个 tag 稍作深入。此时还没有到精读文章内容的阶段，仍然通过阅读 abstract 涉猎。有时也借助 AI 阅读 abstract 来涉猎和更新 tag 表。Prompt 大致如下：
 
 <details>
 <summary> Prompt </summary>
@@ -374,7 +392,12 @@ If you have any question, ask first.
 
 试一下“hybrid-bci”。一篇文章的 Abstract 这样解释：hBCI, is a device formed by the combination of control signal with one or more bio-signals that enhances system performance and usability. (Amalgamation / Combination：结合 / 融合; Usability：易用性 / 可用性) 。这可能会在
 
-接着再试一下 feature extraction，即”模式识别“：这是 BCI 结构中处于原始信号采集（raw brain signals）和分类器（classifier）中间的阶段。该阶段将复杂、高维且低信噪比的信号转换为低阶、高区分度的向量，再输入分类器。
+接着再试一下 feature extraction，即“模式识别”：这是 BCI 结构中处于原始信号采集（raw brain signals）和分类器（classifier）中间的阶段。该阶段将复杂、高维且低信噪比的信号转换为低阶、高区分度的向量，再输入分类器。
 
-之后看到 speech-decoding，有意思。看过摘要后，选出 6 篇文章全文下载。其中 …… 的演示视频非常精彩。这些文章讨论如何通过电信号识别语言，同时还要分辨被测对象是打算发言还是自言自语。
+最后看到 speech-decoding，有意思。看过摘要后，选出 6 篇文章全文下载。其中 [10.1016/j.celrep.2026.117162](https://doi.org/10.1016/j.celrep.2026.117162) 的演示视频非常精彩。这些文章讨论如何通过电信号识别语言，同时还能分辨被测对象是打算发言还是自言自语。
+
+## 结语
+对于 LLM 和人脑协同工作这个目标，至此已经完成了第一步——核心论文素材库的建立。以后的工作都可以基于此开展。无论是有新的期刊论文，还是有新的分类逻辑，都可以在此素材库上应用。下一步的工作有两方面：一方面是增强基础——将一些神经科学书籍制作成 skill，以便准确解释相关概念；另一方面是建立结构——哪些技术组合起来能够走通 Problem B & C。
+
+此外，本文背后更加宏大的愿景——计算机与人的深度融合，其话题深度远超本文的范围。之后会单独写一篇博客详细展开。敬请期待。
 
