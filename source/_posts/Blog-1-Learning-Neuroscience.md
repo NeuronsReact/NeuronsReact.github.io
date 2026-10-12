@@ -1,9 +1,10 @@
 ---
 title: 神经科学学习 —— Step 1：建立基础素材库
 tags:
-  - 创作
+  - Neuroscience
 categories:
-  - 创作
+  - Academic
+  - Neuroscience
 date: 2026-10-12 02:46:36
 updated: 2026-10-12 02:46:36
 mathjax: true
