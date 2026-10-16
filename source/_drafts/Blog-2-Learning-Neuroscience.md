@@ -30,4 +30,14 @@ mathjax: true
 | Gazzaniga, Ivry & Mangun, *Cognitive Neuroscience* |
 | Poeppel, Mangun & Gazzaniga, *The Cognitive Neurosciences* |
 
+
+## 应用教材知识库
+
+接下来让 AI 生成设计认知增强产品涉及的知识点。不同 AI 给出的产品结构是类似的，均为“意图识别 - 解码 - 外部推理 - 以传统方式输出”。
+
+### 意图识别
+
+> 写现有的eeg，dcg，fMRI 技术的优劣。
+> 可以发现现有的二分法、方向解码的准确度不高，因此可能需要设置一个确认环节，也许可以做成 pragmeta 那种简单解谜的操作
+
 【方向的选取依据，并不是挑最容易做出东西的，而是挑最薄弱的】和科研略微不同，从产品角度来讲，各项技术的现状都与最终产品的效果直接相关，因此资源要向薄弱的环节倾斜。
