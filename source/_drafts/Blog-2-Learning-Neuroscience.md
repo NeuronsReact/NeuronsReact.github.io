@@ -31,9 +31,28 @@ mathjax: true
 | Poeppel, Mangun & Gazzaniga, *The Cognitive Neurosciences* |
 
 
-## 应用教材知识库
+## 产品技术路线设想
 
-接下来让 AI 生成设计认知增强产品涉及的知识点。产品工作流程可以分为“意图识别 - 解码 - 外部推理 - 以传统方式输出 - 使用者看到反馈”。
+接下来让 AI 生成设计认知增强产品涉及的知识点。先考虑一个较为简单的产品。其“读取”使用者的意图，然后输入给外部智慧（比如 LLM），最后通过传统输出方式（屏幕、语音、动作等）输出给使用者，完成一次功能循环。产品工作流程可以分为“意图识别 - 解码 - 外部推理 - 以传统方式输出 - 使用者看到反馈”。
+
+我们优先解决前两个环节。这两个环节主要用到 BMI (Brain-machine interface) 技术。
+
+## Brain-machine interface
+脑机接口（Brain-machine interface，BMI）是一种在神经元尺度下测量和改变生物电活动的医学设备。根据《神经科学基础》[\[1\]](https://users.ece.cmu.edu/~byronyu/papers/PNS-6thEdition-SectionV-Motor-Chapter39-BMIs.pdf) 第 39 章，BMI 可大致分为 4 种类型，分别是用于恢复感知能力、恢复运动能力、调节异常神经和化学活动、恢复大脑处理功能的 BMI。
+
+认知增强产品所需的 BMI 的设计功能并非恢复损伤的神经系统功能，而是仅读取神经电活动，用于提高认知系统的性能，所以不属于以上的分类，但技术方面是共同的。几种 BMI 技术的具体形式、特点和优劣汇总如下：
+
+| 技术路线 | 硬件 | 收集什么样的信号 | Where it appears |
+|---|---|---|---|
+| **Non-invasive EEG BCI** | Scalp cap with disk electrodes; high-density EEG systems are also mentioned. EEG-based motor-imagery control is used in the Walk Again neurorehabilitation example. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 24](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch24-part12-mind-reading-privacy-cognitive-enhancement-bmi-neurorehab-aesthetics-music.md); [Banich ch. 3](C:/Users/Scott/.agents/skills/banich-cognitive-neuroscience/chapters/ch03-methods.md) |
+| **Cortical-surface recording** | Subdural ECoG grids/strips and micro-ECoG arrays. These are implanted on the brain’s surface; the notes describe high-gamma recordings used for decoding. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 15](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch15-part8-representational-models-feature-fallacy-mvpa-decoding-encoding-deep-learning.md) |
+| **Penetrating intracortical arrays** | Microelectrode arrays implanted in motor, premotor, or parietal cortex; record action potentials and LFPs. Kandel describes a 96-channel clinical example. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 11](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch11-part6-corticospinal-tract-bmi-somatosensory-control-cortical-reorganization.md) |
+| **Closed-loop implanted devices** | Recording contacts can detect neural activity for seizure or other activity-regulating systems; some devices then stimulate. The recording contacts are sensors, while the stimulation contacts also serve as actuators. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md) |
+
+The skills also cover non-invasive **fMRI brain decoding** and **fNIRS** studies, but don’t present them as the main motor-control BMI sensors. fMRI is used to decode constrained stimulus or percept categories; fNIRS appears in infant and hyperscanning examples. **MEG**, measured with SQUID sensors, is another non-invasive brain-recording method, though the notes don’t identify it as a BMI controller. See [Gazzaniga ch. 6](C:/Users/Scott/.agents/skills/gazzaniga-cognitive-neuroscience/chapters/ch06-object-recognition.md), [Poeppel ch. 22](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch22-part11-social-threat-learning-value-guided-development-cooperation-interpersonal-neuroscience.md), and [Banich ch. 3](C:/Users/Scott/.agents/skills/banich-cognitive-neuroscience/chapters/ch03-methods.md).
+
+
+
 
 ### 意图识别
 
