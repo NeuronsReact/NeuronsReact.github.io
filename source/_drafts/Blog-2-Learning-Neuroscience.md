@@ -39,15 +39,22 @@ mathjax: true
 
 ## 用什么采集
 
-意图识别、解码两步骤主要与脑机接口（Brain-machine interface，BMI）紧密相关。根据《神经科学基础》[\[1\]](https://users.ece.cmu.edu/~byronyu/papers/PNS-6thEdition-SectionV-Motor-Chapter39-BMIs.pdf) 第 39 章的定义，BMI 是一类在神经元尺度下测量和改变生物电活动的医学设备。，BMI 可大致分为 4 种类型，分别是用于恢复感知能力、恢复运动能力、调节异常神经和化学活动、恢复大脑处理功能的 BMI。认知增强产品并不通过 BMI 恢复损伤的神经系统，而是借助其测量功能提供输入。几种 BMI 技术路线的特点和优劣汇总如下：
+意图识别、解码两步骤主要与脑机接口（Brain-machine interface，BMI）紧密相关。根据《神经科学基础》[\[1\]](https://users.ece.cmu.edu/~byronyu/papers/PNS-6thEdition-SectionV-Motor-Chapter39-BMIs.pdf) 第 39 章的定义，BMI 是一类在神经元尺度下测量和改变生物电活动的医学设备，可大致分为 4 种类型，分别是用于恢复感知能力、恢复运动能力、调节异常神经和化学活动、恢复大脑处理功能的 BMI。认知增强产品并不通过 BMI 恢复损伤的神经系统，仅仅借助其测量功能提供输入。
 
+BMI 有几个技术维度：使用什么传感器、使用什么 scaling-up 方式、使用哪种方式供电和传输、使用什么监控分析系统。
 
-| 技术路线 | 硬件 | 收集什么样的信号 | Where it appears |
+#### 神经元传感器分类
+
+传感器的作用是采集原始的神经电信号以供解码，最终获得使用者的意图和言语表达内容。根据采集位置、所采集信号的不同，分为以下类型：
+
+| 神经元传感器类型 | 采集位置 | 收集什么样的信号 | 引用 |
 |---|---|---|---|
-| **Non-invasive EEG BCI** | Scalp cap with disk electrodes; high-density EEG systems are also mentioned. EEG-based motor-imagery control is used in the Walk Again neurorehabilitation example. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 24](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch24-part12-mind-reading-privacy-cognitive-enhancement-bmi-neurorehab-aesthetics-music.md); [Banich ch. 3](C:/Users/Scott/.agents/skills/banich-cognitive-neuroscience/chapters/ch03-methods.md) |
-| **Cortical-surface recording** | Subdural ECoG grids/strips and micro-ECoG arrays. These are implanted on the brain’s surface; the notes describe high-gamma recordings used for decoding. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 15](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch15-part8-representational-models-feature-fallacy-mvpa-decoding-encoding-deep-learning.md) |
-| **Penetrating intracortical arrays** | Microelectrode arrays implanted in motor, premotor, or parietal cortex; record action potentials and LFPs. Kandel describes a 96-channel clinical example. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 11](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch11-part6-corticospinal-tract-bmi-somatosensory-control-cortical-reorganization.md) |
-| **Closed-loop implanted devices** | Recording contacts can detect neural activity for seizure or other activity-regulating systems; some devices then stimulate. The recording contacts are sensors, while the stimulation contacts also serve as actuators. | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md) |
+| 脑电图 (electroencephalogram, EEG) | 皮肤表面放置电极片 | 一大片神经元的平均电信号 | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 24](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch24-part12-mind-reading-privacy-cognitive-enhancement-bmi-neurorehab-aesthetics-music.md); [Banich ch. 3](C:/Users/Scott/.agents/skills/banich-cognitive-neuroscience/chapters/ch03-methods.md) |
+| 皮质脑电图 (electrocorticography, ECoG) | 大脑皮层表面放置电极，比 EEG 到神经元的距离近得多 | 一小片神经元的平均电信号 | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 15](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch15-part8-representational-models-feature-fallacy-mvpa-decoding-encoding-deep-learning.md) |
+| 穿刺式皮质内电极 (penetrating intracortical electrodes) | 电极深入皮层表面以下 1~2mm | 非常小范围的神经元信号，可能对应单个神经元 | [Kandel ch. 39 skill notes](C:/Users/Scott/.agents/skills/kandel-principles-neural-science/chapters/ch39-brain-machine-interfaces.md); [Poeppel ch. 11](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch11-part6-corticospinal-tract-bmi-somatosensory-control-cortical-reorganization.md) |
+
+
+
 
 The skills also cover non-invasive **fMRI brain decoding** and **fNIRS** studies, but don’t present them as the main motor-control BMI sensors. fMRI is used to decode constrained stimulus or percept categories; fNIRS appears in infant and hyperscanning examples. **MEG**, measured with SQUID sensors, is another non-invasive brain-recording method, though the notes don’t identify it as a BMI controller. See [Gazzaniga ch. 6](C:/Users/Scott/.agents/skills/gazzaniga-cognitive-neuroscience/chapters/ch06-object-recognition.md), [Poeppel ch. 22](C:/Users/Scott/.agents/skills/poeppel-cognitive-neurosciences/chapters/ch22-part11-social-threat-learning-value-guided-development-cooperation-interpersonal-neuroscience.md), and [Banich ch. 3](C:/Users/Scott/.agents/skills/banich-cognitive-neuroscience/chapters/ch03-methods.md).
 
